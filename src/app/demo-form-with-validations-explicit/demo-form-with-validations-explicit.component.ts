@@ -23,6 +23,17 @@ export class DemoFormWithValidationsExplicitComponent implements OnInit {
     });
 
     this.sku = this.myForm.controls.sku;
+
+    // the observable passed is a single key called 'next'
+    // the next function is called with the new value changes
+    this.sku.valueChanges.subscribe(
+      (value: string) => {console.log('sku chnaged to: ', value); });
+
+    this.myForm.valueChanges.subscribe(
+      (form: any) => {
+        console.log('form changed to: ', form);
+      }
+    );
   }
 
   ngOnInit() {
