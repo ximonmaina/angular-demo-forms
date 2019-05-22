@@ -1,0 +1,15 @@
+<div class="ui raised segment">
+  <h2 class="ui header">Demo Form: ngModel two way binding</h2>
+  <form class="ui form" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <div class="ui info message">
+      The product name is: {{productName}}
+    </div>
+    <div class="field">
+      <label for="productNameInput">Product Name</label>
+      <input type="text" id="productNameInput" [formControl]="myForm.get('productName')"
+                    [(ngModel)]="productName" >
+    </div>
+
+    <button type="submit" class="ui button">Submit</button>
+  </form>
+</div>
