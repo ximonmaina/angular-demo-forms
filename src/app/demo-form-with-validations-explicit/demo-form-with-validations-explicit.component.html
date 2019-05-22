@@ -8,6 +8,9 @@
       <input type="text" id="skuInput" placeholder="SKU" name="sku" [formControl]="sku">
       <div *ngIf="!sku.valid" class="ui error message">SKU is invalid</div>
       <div class="ui error message" *ngIf="!sku.hasError('required')">SKU is required</div>
+      <div class="ui error message" *ngIf="sku.hasError('isInvalid')">SKU must begin with
+      <span>123</span></div>
+
     </div>
 
     <div class="ui error message" *ngIf="!myForm.valid">Form is invalid</div>
